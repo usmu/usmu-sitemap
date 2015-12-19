@@ -31,4 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'libnotify', '~> 0.9'
   spec.add_development_dependency 'turnip', '~> 1.2'
   spec.add_development_dependency 'timeout', '~> 0.0'
+  spec.add_development_dependency 'mutant', '~> 0.8'
+  spec.add_development_dependency 'mutant-rspec', '~> 0.8'
 end
