@@ -1,5 +1,6 @@
 %w{
   logging
+  usmu/sitemap/sitemap_file
   usmu/sitemap/version
 }.each {|f| require f }
 
@@ -11,7 +12,7 @@ module Usmu
     end
 
     def renderables_alter(renderables, generator)
-      p renderables
+      renderables << SitemapFile.new(generator, 'sitemap.xml')
     end
 
     private
