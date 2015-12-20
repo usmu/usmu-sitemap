@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Usmu::Sitemap::VERSION
   spec.authors       = ['Matthew Scharley']
   spec.email         = ['matt.scharley@gmail.com']
-  spec.summary       = %q{Sitemap generator plugin for Usmu.}
+  spec.summary       = %q{XML sitemap generator plugin for Usmu.}
   spec.homepage      = 'https://github.com/usmu/usmu-sitemap'
   spec.license       = 'MIT'
 
@@ -19,8 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = Gem::Requirement.new('>= 1.9.3')
 
-  spec.add_dependency 'usmu', '~> 1.0'
+  spec.add_dependency 'usmu', '~> 1.2'
   spec.add_dependency 'logging', '~> 2.0'
+  spec.add_dependency 'ox', '~> 2.2'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake', '~> 10.0'
@@ -30,6 +31,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-rspec', '~> 4.3'
   spec.add_development_dependency 'libnotify', '~> 0.9'
   spec.add_development_dependency 'timeout', '~> 0.0'
-  spec.add_development_dependency 'mutant', '~> 0.8'
-  spec.add_development_dependency 'mutant-rspec', '~> 0.8'
 end

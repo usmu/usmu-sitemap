@@ -2,6 +2,6 @@
 module Usmu
   class Sitemap
     # The current version string for the gem
-    VERSION = '0.1.dev'
+    VERSION = '1.0.0.dev'
   end
 end
