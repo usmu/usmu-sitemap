@@ -23,20 +23,28 @@ module Usmu
       end
 
       def valid_entry?(renderable)
-        meta = renderable['sitemap', 'include', default: nil]
+        meta = renderable['sitemap', 'include']
         return meta unless meta.nil?
 
-        renderable.class != Usmu::Template::StaticFile
+        !renderable.class.equal? Template::StaticFile
       end
 
       def to_url(renderable)
         url = Ox::Element.new('url')
 
         url << (Ox::Element.new('loc') << self['base url', default: '/'] + renderable.output_filename)
-        url << (Ox::Element.new('lastmod') << Time.at(renderable.mtime).iso8601)
-        change_frequency = renderable['sitemap', 'change frequency', default: self['change frequency', default: nil]]
-        url << (Ox::Element.new('changefreq') << change_frequency.to_s) if change_frequency
-        priority = renderable['sitemap', 'priority', default: self['priority', default: nil]]
+        url << (Ox::Element.new('lastmod') << Time.at(renderable.mtime).utc.iso8601)
+
+        change_frequency = renderable['sitemap', 'change frequency', default: self['change frequency']]
+        if change_frequency && !(%w{always hourly daily weekly monthly yearly never}.include? change_frequency)
+          raise "Invalid change frequency '#{change_frequency}' for #{renderable.output_filename}"
+        end
+        url << (Ox::Element.new('changefreq') << change_frequency) if change_frequency
+
+        priority = renderable['sitemap', 'priority', default: self['priority']]
+        if priority && !(priority.is_a?(Float) && priority >= 0 && priority <= 1)
+          raise "Invalid priority '#{priority}' for #{renderable.output_filename}"
+        end
         url << (Ox::Element.new('priority') << priority.to_s) if priority
 
         url
