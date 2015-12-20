@@ -1,3 +1,4 @@
+require 'usmu/helpers/indexer'
 
 module Usmu
   class Sitemap

@@ -105,8 +105,5 @@ RSpec.configure do |config|
   config.capture_log_messages
 end
 
-# Load turnip step definitions
-Dir['spec/**/*_steps.rb'].each {|f| require f[10..f.length] }
-
 # Allow loading of mocks
 $LOAD_PATH.unshift(File.realpath('./spec/mock')) if File.exist? 'spec/mock'
