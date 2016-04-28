@@ -1,6 +1,6 @@
 # usmu-sitemap
 
-[![Build Status](https://travis-ci.org/usmu/usmu-sitemap.svg?branch=master)](https://travis-ci.org/usmu/usmu-sitemap)
+[![Circle CI](https://circleci.com/gh/usmu/usmu-sitemap/tree/master.svg?style=svg)](https://circleci.com/gh/usmu/usmu-sitemap/tree/master)
 [![Dependency Status](https://gemnasium.com/usmu/usmu-sitemap.svg)](https://gemnasium.com/usmu/usmu-sitemap)
 [![Code Climate](https://codeclimate.com/github/usmu/usmu-sitemap/badges/gpa.svg)](https://codeclimate.com/github/usmu/usmu-sitemap)
 
