@@ -1,4 +1,4 @@
-Copyright (c) 2015 Matthew Scharley and contributors
+Copyright (c) 2016 Matthew Scharley and contributors
 
 MIT License
 
